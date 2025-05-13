@@ -1,6 +1,7 @@
 import { getMashups, searchMashups } from '../utils/mashupUtils.js';
 
 export const name = 'search';
+export const description = 'Recherche un mashup dans la liste des mashups disponibles.';
 
 export async function execute(message, args) {
   const term = args.join(' ');

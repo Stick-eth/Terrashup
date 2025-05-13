@@ -2,6 +2,7 @@ import { getMashups, getTrackPath } from '../utils/mashupUtils.js';
 import { enqueue, stop, hasQueue } from '../utils/queueManager.js';
 
 export const name = 'shuffle';
+export const description = 'Mélange la liste des mashups disponibles et les ajoute à la queue.';
 
 export async function execute(message) {
   const guildId = message.guild.id;
@@ -13,7 +14,7 @@ export async function execute(message) {
 
   // 1) Si une queue existe, on la stoppe et vide tout
   if (hasQueue(guildId)) {
-    stop(guildId);
+    return message.reply('❌ Une queue existe déjà. Veuillez d\'abord la vider avec `mimou stop`.');
   }
 
   // 2) Mélange Fisher-Yates du tableau des fichiers

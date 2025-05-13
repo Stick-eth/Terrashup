@@ -1,6 +1,7 @@
 import { pause } from '../utils/queueManager.js';
 
 export const name = 'pause';
+export const description = 'Met la musique en pause ou la reprend si elle est déjà en pause.';
 
 export async function execute(message) {
   const guildId = message.guild.id;
