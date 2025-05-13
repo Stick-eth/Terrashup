@@ -12,8 +12,9 @@ npm-debug.log*
 yarn-debug.log*
 pnpm-debug.log*
 
-# Dossier des mashups (mp3 locaux)
-mashups/*.mp3
+# Dossier des mashups
+mashups/
+
 
 # Fichiers de build / distribution
 dist/

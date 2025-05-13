@@ -7,13 +7,13 @@ const MASHUPS_DIR = path.resolve('./mashups');
 export function getMashups() {
   try {
     return fs.readdirSync(MASHUPS_DIR)
-      .filter(f => f.toLowerCase().endsWith('.mp3'));
+      .filter(f => f.toLowerCase().endsWith('.mp3') || f.toLowerCase().endsWith('.wav'));
   } catch {
     return [];
   }
 }
 
-export function searchMashups(term, limit = 3) {
+export function searchMashups(term, limit = 10) {
   const list = getMashups();
   const fuse = new Fuse(list, {
     includeScore: true,
