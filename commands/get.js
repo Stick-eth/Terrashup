@@ -9,7 +9,7 @@ export async function execute(message, args) {
     return message.reply('📂 Le dossier est vide ou inaccessible.');
   }
 
-  const itemsPerPage = 10;
+  const itemsPerPage = 25;
   const totalMashups = list.length;
   const totalPages   = Math.ceil(list.length / itemsPerPage);
 

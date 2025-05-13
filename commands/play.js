@@ -1,9 +1,9 @@
-import { joinVoiceChannel, createAudioPlayer,
-         createAudioResource, AudioPlayerStatus,
-         NoSubscriberBehavior } from '@discordjs/voice';
 import { getMashups, getTrackPath } from '../utils/mashupUtils.js';
+import { enqueue } from '../utils/queueManager.js';
 
 export const name = 'play';
+export const description = 'Joue ou met en queue la piste spécifiée';
+
 
 export async function execute(message, args) {
   const idx = parseInt(args[0], 10);
@@ -17,22 +17,24 @@ export async function execute(message, args) {
     return message.reply('🔊 Vous devez être dans un salon vocal.');
   }
 
-  const connection = joinVoiceChannel({
-    channelId: voiceChannel.id,
-    guildId:    message.guild.id,
-    adapterCreator: message.guild.voiceAdapterCreator
-  });
+  const trackPath = getTrackPath(list[idx - 1]);
 
-  const player   = createAudioPlayer({ behaviors: { noSubscriber: NoSubscriberBehavior.Play } });
-  const resource = createAudioResource(getTrackPath(list[idx-1]), { inputType: 'arbitrary' });
+  try {
+    const position = await enqueue(message, trackPath);
 
-  player.play(resource);
-  connection.subscribe(player);
-  message.reply(`▶️ Lecture de **${list[idx-1]}**`);
+    if (position === 1) {
+      // Quand c'est la première piste, la lecture démarre immédiatement
+      // et queueManager envoie déjà ▶️ Lecture de **nom.mp3**
+      return;
+    }
 
-  player.on(AudioPlayerStatus.Idle, () => connection.destroy());
-  player.on('error', () => {
-    message.reply('❌ Erreur de lecture.');
-    connection.destroy();
-  });
+    // Sinon, on confirme explicitement l'ajout en file d'attente
+    await message.reply(
+      `➕ **${list[idx - 1]}** ajouté à la queue en position ${position}.`
+    );
+
+  } catch (err) {
+    console.error(err);
+    return message.reply('❌ Impossible d’ajouter la musique à la queue.');
+  }
 }
