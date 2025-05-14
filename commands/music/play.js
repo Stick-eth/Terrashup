@@ -15,6 +15,7 @@ export async function execute(message, args) {
 
   // 2) Vérification que l'utilisateur est en vocal
   const voiceChannel = message.member.voice.channel;
+  console.log('[PLAY] member.voice.channel:', voiceChannel?.id, 'guild:', message.guild.id);
   if (!voiceChannel) {
     return message.reply('🔊 Vous devez être dans un salon vocal.');
   }
