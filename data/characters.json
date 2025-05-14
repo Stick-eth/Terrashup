@@ -1,0 +1,233 @@
+
+[
+  {
+    "name": "Ahri",
+    "genre": "Féminin",
+    "role": "Mid",
+    "damages": "AP",
+    "ressource": "Mana",
+    "rangeType": "à distance",
+    "signature": "N/A",
+    "releaseYear": 2011
+  },
+  {
+    "name": "Garen",
+    "genre": "Masculin",
+    "role": "Top",
+    "damages": "AD",
+    "ressource": "Mana",
+    "rangeType": "mêlée",
+    "signature": "Tomag",
+    "releaseYear": 2010
+  },
+  {
+    "name": "Teemo",
+    "genre": "Masculin",
+    "role": "Top/Jungle",
+    "damages": "AP",
+    "ressource": "Mana",
+    "rangeType": "à distance",
+    "signature": "N/A",
+    "releaseYear": 2009
+  },
+  {
+    "name": "Annie",
+    "genre": "Féminin",
+    "role": "Mid",
+    "damages": "AP",
+    "ressource": "Mana",
+    "rangeType": "à distance",
+    "signature": "N/A",
+    "releaseYear": 2009
+  },
+  {
+    "name": "Malphite",
+    "genre": "Masculin",
+    "role": "Top",
+    "damages": "AP",
+    "ressource": "Mana",
+    "rangeType": "mêlée",
+    "signature": "Charles/Tomab",
+    "releaseYear": 2009
+  },
+  {
+    "name": "Zed",
+    "genre": "Masculin",
+    "role": "Mid",
+    "damages": "AD",
+    "ressource": "Energie",
+    "rangeType": "mêlée",
+    "signature": "Cambuz",
+    "releaseYear": 2012
+    },
+    {
+        "name": "Ekko",
+        "genre": "Masculin",
+        "role": "Mid",
+        "damages": "AP",
+        "ressource": "Mana",
+        "rangeType": "mêlée",
+        "signature": "Cambuz",
+        "releaseYear": 2015
+    },
+    {
+        "name": "Miss Fortune",
+        "genre": "Féminin",
+        "role": "ADC",
+        "damages": "AD",
+        "ressource": "Mana",
+        "rangeType": "à distance",
+        "signature": "Tomag",
+        "releaseYear": 2010
+    },
+    {
+        "name": "Kennen",
+        "genre": "Masculin",
+        "role": "Top/Mid",
+        "damages": "AP",
+        "ressource": "Energie",
+        "rangeType": "à distance",
+        "signature": "Charles",
+        "releaseYear": 2010
+    },
+    {
+        "name": "Bard",
+        "genre": "Masculin",
+        "role": "Support",
+        "damages": "AP",
+        "ressource": "Mana",
+        "rangeType": "à distance",
+        "signature": "Clyde",
+        "releaseYear": 2015
+    },
+    {
+        "name": "Trundle",
+        "genre": "Masculin",
+        "role": "Top",
+        "damages": "AD",
+        "ressource": "Mana",
+        "rangeType": "mêlée",
+        "signature": "Tomab",
+        "releaseYear": 2010
+    },
+    {
+        "name": "Fiora",
+        "genre": "Féminin",
+        "role": "Top",
+        "damages": "AD",
+        "ressource": "Mana",
+        "rangeType": "mêlée",
+        "signature": "Tomab",
+        "releaseYear": 2012
+    },
+    {
+        "name": "Milio",
+        "genre": "Masculin",
+        "role": "Support",
+        "damages": "AP",
+        "ressource": "Mana",
+        "rangeType": "à distance",
+        "signature": "Stick",
+        "releaseYear": 2023
+    },
+    {
+        "name": "Soraka",
+        "genre": "Féminin",
+        "role": "Support",
+        "damages": "AP",
+        "ressource": "Mana",
+        "rangeType": "à distance",
+        "signature": "Crystal",
+        "releaseYear": 2010
+    },
+    {
+        "name": "Yuumi",
+        "genre": "Féminin",
+        "role": "Support",
+        "damages": "AP",
+        "ressource": "Mana",
+        "rangeType": "à distance",
+        "signature": "Crystal/Stick",
+        "releaseYear": 2019
+    },
+    {
+    "name": "Kayn",
+    "genre": "Masculin",
+    "role": "Jungle",
+    "damages": "AD",
+    "ressource": "Energie",
+    "rangeType": "mêlée",
+    "signature": "Antoine",
+    "releaseYear": 2017
+    },
+    {
+        "name": "Shen",
+        "genre": "Masculin",
+        "role": "Top",
+        "damages": "AD",
+        "ressource": "Energie",
+        "rangeType": "mêlée",
+        "signature": "Stick",
+        "releaseYear": 2009
+    },
+    {
+        "name": "Rakan",
+        "genre": "Masculin",
+        "role": "Support",
+        "damages": "AP",
+        "ressource": "Mana",
+        "rangeType": "à distance",
+        "signature": "Charles",
+        "releaseYear": 2017
+    },
+    {
+        "name": "Lee Sin",
+        "genre": "Masculin",
+        "role": "Jungle",
+        "damages": "AD",
+        "ressource": "Energie",
+        "rangeType": "mêlée",
+        "signature": "Cambuz/Charles",
+        "releaseYear": 2011
+    },
+    {
+        "name": "Kled",
+        "genre": "Masculin",
+        "role": "Top",
+        "damages": "AD",
+        "ressource": "Santé",
+        "rangeType": "mêlée",
+        "signature": "Clyde",
+        "releaseYear": 2016
+    },
+    {
+    "name": "Kog'Maw",
+    "genre": "Masculin",
+    "role": "ADC",
+    "damages": "AP/AD",
+    "ressource": "Mana",
+    "rangeType": "à distance",
+    "signature": "Tomag",
+    "releaseYear": 2012
+    },
+    {
+        "name": "Nautilus",
+        "genre": "Masculin",
+        "role": "Support",
+        "damages": "AP",
+        "ressource": "Mana",
+        "rangeType": "mêlée",
+        "signature": "Tomab",
+        "releaseYear": 2010
+    },
+    {
+        "name": "Yone",
+        "genre": "Masculin",
+        "role": "Mid/Top",
+        "damages": "AD",
+        "ressource": "Aucune",
+        "rangeType": "mêlée",
+        "signature": "Arracheur2Kipa/Stick",
+        "releaseYear": 2020
+    }
+]
