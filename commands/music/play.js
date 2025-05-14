@@ -1,5 +1,5 @@
-import { getMashups, getTrackPath } from '../utils/mashupUtils.js';
-import { enqueue } from '../utils/queueManager.js';
+import { getMashups, getTrackPath } from '../../utils/mashupUtils.js';
+import { enqueue } from '../../utils/queueManager.js';
 
 export const name = 'play';
 export const description =

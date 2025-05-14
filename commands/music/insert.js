@@ -1,5 +1,5 @@
-import { getMashups, getTrackPath } from '../utils/mashupUtils.js';
-import { insert } from '../utils/queueManager.js';
+import { getMashups, getTrackPath } from '../../utils/mashupUtils.js';
+import { insert } from '../../utils/queueManager.js';
 
 export const name = 'insert [id]';
 export const description = 'Insère un mashup dans la queue de lecture **en première position**';

@@ -1,5 +1,5 @@
-import { getMashups, getTrackPath } from '../utils/mashupUtils.js';
-import { enqueue, stop, hasQueue } from '../utils/queueManager.js';
+import { getMashups, getTrackPath } from '../../utils/mashupUtils.js';
+import { enqueue, stop, hasQueue } from '../../utils/queueManager.js';
 
 export const name = 'shuffle';
 export const description = 'Mélange la liste des mashups disponibles et les ajoute à la queue.';

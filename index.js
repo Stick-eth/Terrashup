@@ -1,6 +1,7 @@
 import 'dotenv/config';
-import fs   from 'fs';
+import fs from 'fs';
 import path from 'path';
+import { pathToFileURL } from 'url';
 import { Client, GatewayIntentBits, Collection } from 'discord.js';
 import { stop, hasQueue } from './utils/queueManager.js';
 
@@ -15,29 +16,37 @@ const client = new Client({
   ]
 });
 
-// Chargement dynamique des commandes avec description
+// Chargement dynamique des commandes depuis ./commands et ses sous-dossiers
 client.commands = new Collection();
-const commandsPath = path.resolve('./commands');
-for (const file of fs.readdirSync(commandsPath).filter(f => f.endsWith('.js'))) {
-  const { name, description, execute } = await import(`./commands/${file}`);
-  client.commands.set(name, { description, execute });
+const commandsRoot = path.resolve('./commands');
+
+async function loadCommands(dir) {
+  const entries = fs.readdirSync(dir, { withFileTypes: true });
+  for (const entry of entries) {
+    const fullPath = path.join(dir, entry.name);
+    if (entry.isDirectory()) {
+      await loadCommands(fullPath);
+    } else if (entry.isFile() && entry.name.endsWith('.js')) {
+      const fileURL = pathToFileURL(fullPath).href;
+      const { name, description, execute } = await import(fileURL);
+      client.commands.set(name, { description, execute });
+    }
+  }
 }
+
+await loadCommands(commandsRoot);
 
 client.once('ready', () => {
   console.log(`✅ Connecté comme ${client.user.tag}`);
 });
 
-// Écoute des changements d'état vocal pour détecter un kick du bot
+// Gère le cas où le bot est kick du vocal
 client.on('voiceStateUpdate', (oldState, newState) => {
-  // Ne traiter que si c'est le bot qui est affecté
   if (oldState.member.id !== client.user.id) return;
-
-  // Si le bot était dans un salon avant et en est sorti sans en rejoindre un autre
   if (oldState.channelId && !newState.channelId) {
     const guildId = oldState.guild.id;
     if (hasQueue(guildId)) {
       stop(guildId);
-      // Optionnel : prévenir dans le salon système de la guilde
       const sysChannel = oldState.guild.systemChannel;
       if (sysChannel) {
         sysChannel.send(

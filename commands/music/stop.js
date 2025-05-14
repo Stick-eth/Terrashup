@@ -1,4 +1,4 @@
-import { stop, hasQueue } from '../utils/queueManager.js';
+import { stop, hasQueue } from '../../utils/queueManager.js';
 
 export const name = 'stop';
 export const description = 'Arrête la musique et vide la queue.';

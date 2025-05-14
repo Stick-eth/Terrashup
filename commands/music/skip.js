@@ -1,4 +1,4 @@
-import { skip, hasQueue } from '../utils/queueManager.js';
+import { skip, hasQueue } from '../../utils/queueManager.js';
 
 export const name = 'skip';
 export const description = 'Passe à la musique suivante dans la queue.';

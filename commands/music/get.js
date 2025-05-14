@@ -1,5 +1,5 @@
 import { EmbedBuilder } from 'discord.js';
-import { getMashups } from '../utils/mashupUtils.js';
+import { getMashups } from '../../utils/mashupUtils.js';
 
 export const name = 'get';
 export const description = 'Affiche la liste des mashups disponibles dans le dossier.';

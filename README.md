@@ -24,10 +24,10 @@ Terrashup est un bot Discord permettant de partager et d’écouter facilement d
    ```bash
     npm start
     ```
-Le bot lit automatiquement les fichiers MP3 du dossier `mashups` et les ajoute à la liste des morceaux disponibles. 
+Le bot lit automatiquement les fichiers MP3 du dossier `mashups` (à ajouter à la racine) et les ajoute à la liste des morceaux disponibles. 
 
 ## Invitation du bot
-Pour inviter le bot sur votre serveur Discord, utilisez le lien suivant : [Inviter le bot](https://discord.com/oauth2/authorize?client_id=1371934302857724006&permissions=1758114394668864&integration_type=0&scope=bot)
+Pour inviter le bot Terrashup actuel sur votre serveur Discord, utilisez le lien suivant : [Inviter le bot](https://discord.com/oauth2/authorize?client_id=1371934302857724006&permissions=1758114394668864&integration_type=0&scope=bot)
 
 ## Contact
 Pour toute question ou suggestion, n'hésitez pas à ne PAS me contacter `:]`

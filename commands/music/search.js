@@ -1,4 +1,4 @@
-import { getMashups, searchMashups } from '../utils/mashupUtils.js';
+import { getMashups, searchMashups } from '../../utils/mashupUtils.js';
 
 export const name = 'search';
 export const description = 'Recherche un mashup dans la liste des mashups disponibles.';
