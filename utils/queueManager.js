@@ -28,37 +28,49 @@ function getOrCreateQueue(guildId) {
 }
 
 export async function enqueue(message, trackPath) {
-  const guildId = message.guild.id;
-  const queue   = getOrCreateQueue(guildId);
-  const wasConnected = Boolean(queue.connection);
+  const guildId      = message.guild.id;
+  const voiceChannel = message.member.voice.channel;
+  if (!voiceChannel) {
+    throw new Error('Vous devez être dans un salon vocal.');
+  }
 
+  const queue    = getOrCreateQueue(guildId);
   queue.songs.push(trackPath);
   const position = queue.songs.length;
 
-  if (!wasConnected) {
-    const vc = message.member.voice.channel;
+  // ➤ Détecte s’il faut (re)joindre le salon vocal
+  const conn        = queue.connection;
+  const joinedInVC  = conn?.joinConfig?.channelId === voiceChannel.id;
+  const needToJoin  = !joinedInVC;
+
+  if (needToJoin) {
+    // (Re)joindre et démarrer la lecture
     queue.connection = joinVoiceChannel({
-      channelId: vc.id,
+      channelId:      voiceChannel.id,
       guildId,
       adapterCreator: message.guild.voiceAdapterCreator
     });
     queue.connection.subscribe(queue.player);
     _playNext(message);
-  } else if (
+    return { position, isFirst: true };
+  }
+
+  // Sinon, si on est déjà connecté mais idle et qu'il n'y a qu'un seul titre, on relance
+  if (
     queue.player.state.status === AudioPlayerStatus.Idle &&
     queue.songs.length === 1
   ) {
     _playNext(message);
   }
 
-  return { position, isFirst: !wasConnected };
+  return { position, isFirst: false };
 }
 
 function _playNext(message) {
   const guildId = message.guild.id;
   const queue   = guildQueues.get(guildId);
 
-  // *** Garde : si la queue n'existe plus, on arrête tout ***
+  // Si la queue a disparu (stop/kick), on ne fait rien
   if (!queue) return;
 
   const nextTrack = queue.songs.shift();
@@ -70,7 +82,7 @@ function _playNext(message) {
   }
 
   // Flux ffmpeg pour lecture en temps réel
-  const ffmpeg = new prism.FFmpeg({
+  const ffmpeg   = new prism.FFmpeg({
     args: [
       '-re',
       '-i', nextTrack,
@@ -81,21 +93,16 @@ function _playNext(message) {
       '-ac', '2'
     ]
   });
-  const resource = createAudioResource(ffmpeg, {
-    inputType: StreamType.Raw
-  });
-
+  const resource = createAudioResource(ffmpeg, { inputType: StreamType.Raw });
   queue.player.play(resource);
 
-  // Calcul de l'ID et nom du fichier
+  // Calcul de l'ID et envoi du message
   const filename = path.basename(nextTrack);
   const allFiles = getMashups();
   const id       = allFiles.indexOf(filename) + 1;
-
-  // Envoi du message (ID + nom)
   message.channel.send(`▶️ Lecture de \`${id}\` **${filename}**`);
 
-  // Quand la piste se termine, on relance la suivante
+  // À la fin, on relance la suivante
   queue.player.once(AudioPlayerStatus.Idle, () => _playNext(message));
 }
 
