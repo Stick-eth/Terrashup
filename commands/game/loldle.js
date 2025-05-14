@@ -152,11 +152,11 @@ export async function execute(message, args) {
   const Signature          = guess.Signature;
   const guessSignatureDisplay = Array.isArray(guess.Signature)
     ? guess.Signature.join(', ')
-    : guess.Signature || 'Personne😿' ;
+    : guess.Signature || 'Personne' ;
   const answerSignature    = answer.Signature;
     const answerSignatureDisplay = Array.isArray(answer.Signature)
-        ? answer.Signature.join(', ')
-        : answer.Signature || 'Personne😿' ;
+      ? answer.Signature.join(', ')
+      : answer.Signature || 'Personne' ;
 
 
   // Construction de l'embed
