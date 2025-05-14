@@ -4,6 +4,7 @@ import path from 'path';
 import { pathToFileURL } from 'url';
 import { Client, GatewayIntentBits, Collection } from 'discord.js';
 import { stop, hasQueue } from './utils/queueManager.js';
+import { generateDependencyReport } from '@discordjs/voice';
 
 const PREFIX = 'mimou ';
 const client = new Client({
@@ -37,7 +38,7 @@ async function loadCommands(dir) {
 await loadCommands(commandsRoot);
 
 client.once('ready', () => {
-  console.log(`✅ Connecté comme ${client.user.tag}`);
+  console.log(`✅ Connecté`);
 });
 
 // Gère le cas où le bot est kick du vocal
@@ -76,4 +77,5 @@ client.on('messageCreate', async message => {
   }
 });
 
+// console.log(generateDependencyReport()); // Affiche les dépendances de @discordjs/voice
 client.login(process.env.DISCORD_TOKEN);
