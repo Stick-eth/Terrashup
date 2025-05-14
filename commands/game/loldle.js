@@ -130,8 +130,14 @@ export async function execute(message, args) {
   const answerRegions      = answer.regions.join('/');
   const guessYear          = String(new Date(guess.release_date).getFullYear());
   const answerYear         = String(new Date(answer.release_date).getFullYear());
-  const Signature         = guess.Signature || 'n/a';
+  const Signature          = guess.Signature || 'n/a';
+  const guessSignatureDisplay = Array.isArray(guess.Signature)
+    ? guess.Signature.join(', ')
+    : guess.Signature || 'Personne😿' ;
   const answerSignature    = answer.Signature;
+    const answerSignatureDisplay = Array.isArray(answer.Signature)
+        ? answer.Signature.join(', ')
+        : answer.Signature || 'Personne😿' ;
 
 
   // Construction de l'embed
@@ -146,7 +152,7 @@ const embed = new EmbedBuilder()
         { name: 'Portée',     value: `${COLORS[compareField(guessRange, answerRange)]} ${guess.range_type.join(', ')}`, inline: true },
         { name: 'Région',     value: `${COLORS[compareField(guessRegions, answerRegions)]} ${guess.regions.join(', ')}`, inline: true },
         { name: 'Année',      value: `${COLORS[compareField(guessYear, answerYear)]} ${guessYear}`, inline: true },
-        { name: 'Signature',  value: `${COLORS[compareField(Signature, answerSignature)]} ${guess.Signature || 'personne'}`, inline: true }
+        { name: 'Signature',  value: `${COLORS[compareField(Signature, answerSignature)]} ${guessSignatureDisplay}`, inline: true }
     )
     .setColor(0x00AE86);
 
