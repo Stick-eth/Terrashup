@@ -3,7 +3,6 @@
     "_id": "6293f2bf4fccc7941b03a32e",
     "championId": "628141c33a4f16643c39d088",
     "championName": "Lux",
-    "signature": "Crystal", 
     "species": [
       "Human",
       "Magicborn"
@@ -34,6 +33,9 @@
     ],
     "newSpecies": [
       "Human"
+    ],
+	"Signature": [
+      "Crystal"
     ]
   },
   {
@@ -344,6 +346,9 @@
     ],
     "newSpecies": [
       "Human"
+    ],
+	"Signature": [
+      "Aleix"
     ]
   },
   {
@@ -482,6 +487,9 @@
     ],
     "newSpecies": [
       "Creature"
+    ],
+	"Signature": [
+      "Clyde"
     ]
   },
   {
@@ -655,6 +663,9 @@
     ],
     "newSpecies": [
       "Creature"
+    ],
+	"Signature": [
+      "Tomab"
     ]
   },
   {
@@ -725,6 +736,9 @@
     ],
     "newSpecies": [
       "Creature"
+    ],
+	"Signature": [
+      "Clyde"
     ]
   },
   {
@@ -794,6 +808,9 @@
     ],
     "newSpecies": [
       "Human"
+    ],
+	"Signature": [
+      "Antoine"
     ]
   },
   {
@@ -932,6 +949,9 @@
     ],
     "newSpecies": [
       "Human"
+    ],
+	"Signature": [
+      "Cambuz"
     ]
   },
   {
@@ -1073,6 +1093,9 @@
     ],
     "newSpecies": [
       "Creature"
+    ],
+	"Signature": [
+      "Antoine"
     ]
   },
   {
@@ -1106,6 +1129,9 @@
     ],
     "newSpecies": [
       "Human"
+    ],
+	"Signature": [
+      "Tomab"
     ]
   },
   {
@@ -1242,6 +1268,12 @@
     ],
     "newSpecies": [
       "Human"
+    ],
+	"Signature": [
+      "Charles",
+	  "Alderiate",
+	  "Strey",
+	  "Antoine"
     ]
   },
   {
@@ -1660,6 +1692,10 @@
     ],
     "newSpecies": [
       "Creature"
+    ],
+	"Signature": [
+      "Clyde",
+	  "Alderiate"
     ]
   },
   {
@@ -1730,6 +1766,9 @@
     ],
     "newSpecies": [
       "Human"
+    ],
+	"Signature": [
+      "Aleix"
     ]
   },
   {
@@ -2053,8 +2092,11 @@
       "Human (Magically Altered) (Kayn)"
     ],
     "newSpecies": [
-      "Human"
+      "Human"],
+	  "signature": [
+      "Antoine"
     ]
+
   },
   {
     "_id": "6293f47c4fccc7941b03a41b",
@@ -2088,6 +2130,10 @@
     "newSpecies": [
       "Half animal",
       "Yordle"
+    ],
+	"Signature": [
+      "Charles",
+	  "Splinter"
     ]
   },
   {
@@ -2192,6 +2238,9 @@
     "newSpecies": [
       "Half animal",
       "Yordle"
+    ],
+	"Signature": [
+      "Clyde"
     ]
   },
   {
@@ -2225,6 +2274,9 @@
     ],
     "newSpecies": [
       "Creature"
+    ],
+	"Signature": [
+      "Tomag"
     ]
   },
   {
@@ -2295,6 +2347,10 @@
     ],
     "newSpecies": [
       "Human"
+    ],
+	"Signature": [
+      "Cambuz",
+	  "Charles"
     ]
   },
   {
@@ -2434,6 +2490,9 @@
     ],
     "newSpecies": [
       "Human"
+    ],
+	"Signature": [
+      "Aniss"
     ]
   },
   {
@@ -2501,6 +2560,9 @@
     ],
     "newSpecies": [
       "Creature"
+    ],
+	"Signature": [
+      "Charles"
     ]
   },
   {
@@ -2639,6 +2701,10 @@
     ],
     "newSpecies": [
       "Human"
+    ],
+	"Signature": [
+      "Tomag",
+	  "Tomab"
     ]
   },
   {
@@ -2673,6 +2739,9 @@
     "newSpecies": [
       "Human",
       "Creature"
+    ],
+	"Signature": [
+      "Tomab"
     ]
   },
   {
@@ -2780,6 +2849,9 @@
     "newSpecies": [
       "Creature",
       "Half animal"
+    ],
+	"Signature": [
+      "Antoine"
     ]
   },
   {
@@ -2813,6 +2885,9 @@
     ],
     "newSpecies": [
       "Creature"
+    ],
+	"Signature": [
+      "Tomab"
     ]
   },
   {
@@ -3024,6 +3099,9 @@
     ],
     "newSpecies": [
       "Creature"
+    ],
+	"Signature": [
+      "Cambuz"
     ]
   },
   {
@@ -3264,6 +3342,9 @@
     "newSpecies": [
       "Human",
       "Creature"
+    ],
+	"Signature": [
+      "Charles"
     ]
   },
   {
@@ -3370,6 +3451,9 @@
     "newSpecies": [
       "Human",
       "Half animal"
+    ],
+	"Signature": [
+      "Aniss"
     ]
   },
   {
@@ -3789,6 +3873,9 @@
     ],
     "newSpecies": [
       "Human"
+    ],
+	"Signature": [
+      "Aniss"
     ]
   },
   {
@@ -3861,6 +3948,9 @@
     ],
     "newSpecies": [
       "Human"
+    ],
+	"Signature": [
+      "Cambuz"
     ]
   },
   {
@@ -4032,6 +4122,9 @@
     "newSpecies": [
       "Half animal",
       "Creature"
+    ],
+	"Signature": [
+      "Crystal"
     ]
   },
   {
@@ -4104,6 +4197,9 @@
     ],
     "newSpecies": [
       "Human"
+    ],
+	"Signature": [
+      "Aniss"
     ]
   },
   {
@@ -4176,6 +4272,9 @@
     "newSpecies": [
       "Creature",
       "Half animal"
+    ],
+	"Signature": [
+      "Clyde"
     ]
   },
   {
@@ -4416,6 +4515,10 @@
     ],
     "newSpecies": [
       "Creature"
+    ],
+	"Signature": [
+      "Tomab",
+	  "Charles"
     ]
   },
   {
@@ -4451,6 +4554,9 @@
     ],
     "newSpecies": [
       "Human"
+    ],
+	"Signature": [
+      "Alderiate"
     ]
   },
   {
@@ -4522,6 +4628,10 @@
     "newSpecies": [
       "Half animal",
       "Creature"
+    ],
+	"Signature": [
+      "Tomab",
+	  "Cambuz"
     ]
   },
   {
@@ -4672,6 +4782,10 @@
     ],
     "newSpecies": [
       "Human"
+    ],
+	"Signature": [
+      "Cambuz",
+	  "Pandore"
     ]
   },
   {
@@ -4842,6 +4956,9 @@
     ],
     "newSpecies": [
       "Human"
+    ],
+	"Signature": [
+      "Aniss"
     ]
   },
   {
@@ -4988,6 +5105,9 @@
     ],
     "newSpecies": [
       "Half animal"
+    ],
+	"Signature": [
+      "Antoine"
     ]
   },
   {
@@ -5056,6 +5176,10 @@
     "newSpecies": [
       "Human",
       "Creature"
+    ],
+	"Signature": [
+      "Aleix",
+	  "Cambuz"
     ]
   },
   {
@@ -5196,6 +5320,10 @@
     ],
     "newSpecies": [
       "Human"
+    ],
+	"Signature": [
+      "Aniss",
+	  "Arracheur2Kippa"
     ]
   },
   {
@@ -5266,6 +5394,10 @@
     ],
     "newSpecies": [
       "Half animal"
+    ],
+	"Signature": [
+      "Crystal",
+	  "Aniss"
     ]
   },
   {
@@ -5334,6 +5466,9 @@
     ],
     "newSpecies": [
       "Human"
+    ],
+	"Signature": [
+      "Cambuz"
     ]
   },
   {
@@ -5440,6 +5575,9 @@
     ],
     "newSpecies": [
       "Human"
+    ],
+	"Signature": [
+      "Aniss"
     ]
   },
   {
@@ -5610,28 +5748,184 @@
     ]
   },
   {
-    "championName": "Urf",
+    "championName": "Milio",
     "originalSpecies": [
-      "Manatee"
+      "Human"
     ],
     "species": [
-      "Manatee"
+      "Human"
+    ],
+    "regions": [
+      "Ixtal"
+    ],
+    "gender": "Male",
+    "positions": [
+      "Support"
+    ],
+    "resource": "Mana",
+    "release_date": "2023-03-23",
+    "range_type": [
+      "Ranged"
+    ],
+	"Signature": [
+      "Aniss",
+	  "Charles"
+    ]
+  },
+    {
+    "championName": "Naafiri",
+    "originalSpecies": [
+      "Dog"
+    ],
+    "species": [
+      "Darkin",
+	  "Dog"
+    ],
+    "regions": [
+      "Shurima"
+    ],
+    "gender": "Female",
+    "positions": [
+      "Middle",
+	  "Jungle"
+    ],
+    "resource": "Mana",
+    "release_date": "2023-07-19",
+    "range_type": [
+      "Melee"
+    ]
+  },
+    {
+    "championName": "Briar",
+    "originalSpecies": [
+      "Human"
+    ],
+    "species": [
+      "Human",
+	  "Magically Altered"
+    ],
+    "regions": [
+      "Noxus"
+    ],
+    "gender": "Female",
+    "positions": [
+      "Jungle"
+    ],
+    "resource": "Frenzy",
+    "release_date": "2023-09-14",
+    "range_type": [
+      "Melee"
+    ]
+  },
+    {
+    "championName": "Hwei",
+    "originalSpecies": [
+      "Human"
+    ],
+    "species": [
+      "Human"
+    ],
+    "regions": [
+      "Ionia"
+    ],
+    "gender": "Male",
+    "positions": [
+      "Middle",
+	  "Support"
+    ],
+    "resource": "Mana",
+    "release_date": "2023-12-05",
+    "range_type": [
+      "Ranged"
+    ],
+	"Signature": [
+      "Aniss"
+    ]
+  },
+    {
+    "championName": "Smolder",
+    "originalSpecies": [
+      "Dragon"
+    ],
+    "species": [
+      "Dragon"
     ],
     "regions": [
       "Runeterra"
     ],
     "gender": "Male",
     "positions": [
-      "Top",
-      "Jungle",
-      "Middle",
-      "Support",
       "Bottom"
     ],
-    "resource": "Unknown",
-    "release_date": "2010-04-01",
+    "resource": "Mana",
+    "release_date": "2024-01-31",
+    "range_type": [
+      "Ranged"
+    ]
+  },
+    {
+    "championName": "Aurora",
+    "originalSpecies": [
+      "Vastayan"
+    ],
+    "species": [
+      "Vastayan"
+    ],
+    "regions": [
+      "Freljord"
+    ],
+    "gender": "Female",
+    "positions": [
+      "Middle"
+    ],
+    "resource": "Mana",
+    "release_date": "2024-07-17",
+    "range_type": [
+      "Ranged"
+    ]
+  },
+    {
+    "championName": "Ambessa",
+    "originalSpecies": [
+      "Human"
+    ],
+    "species": [
+      "Human"
+    ],
+    "regions": [
+      "Noxus"
+    ],
+    "gender": "Female",
+    "positions": [
+      "Top",
+	  "Jungle"
+    ],
+    "resource": "Energy",
+    "release_date": "2024-11-06",
     "range_type": [
       "Melee"
+    ]
+  },
+    {
+    "championName": "Mel",
+    "originalSpecies": [
+      "Human"
+    ],
+    "species": [
+      "Human"
+    ],
+    "regions": [
+      "Noxus"
+    ],
+    "gender": "Female",
+    "positions": [
+      "Middle",
+	  "Support"
+    ],
+    "resource": "Mana",
+    "release_date": "2025-01-23",
+    "range_type": [
+      "Ranged"
     ]
   }
 ]

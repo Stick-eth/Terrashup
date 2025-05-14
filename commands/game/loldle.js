@@ -13,15 +13,36 @@ async function loadCharacters() {
 }
 
 function compareField(guessVal, answerVal) {
-  if (!guessVal || !answerVal) return 'red';
-  const sep   = /[\/,]+/;
-  const gList = guessVal.split(sep).map(s => s.trim().toLowerCase());
-  const aList = answerVal.split(sep).map(s => s.trim().toLowerCase());
+  // 1) Garde-fou si l’une des valeurs est nulle/indéfinie
+  if (guessVal == null || answerVal == null) return 'red';
+
+  // 2) Si l’une des valeurs est un array, on transforme en string "a/b/..."
+  if (Array.isArray(guessVal))   guessVal   = guessVal.join('/');
+  if (Array.isArray(answerVal))  answerVal  = answerVal.join('/');
+
+  // 3) On force en string
+  guessVal  = String(guessVal);
+  answerVal = String(answerVal);
+
+  // 4) On normalise pour enlever les accents
+  guessVal  = guessVal.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+  answerVal = answerVal.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+
+  // 5) Séparateur de sous-valeurs
+  const sep = /[\/,]+/;
+  const gList = guessVal.split(sep).map(s => s.trim());
+  const aList = answerVal.split(sep).map(s => s.trim());
+
+  // 6) Comparaison des ensembles
   const equalSets =
     gList.length === aList.length &&
     gList.every(v => aList.includes(v));
   if (equalSets) return 'green';
+
+  // 7) Partage au moins un élément ?
   if (gList.some(v => aList.includes(v))) return 'orange';
+
+  // 8) Aucune correspondance
   return 'red';
 }
 
@@ -109,23 +130,23 @@ export async function execute(message, args) {
   const answerRegions      = answer.regions.join('/');
   const guessYear          = String(new Date(guess.release_date).getFullYear());
   const answerYear         = String(new Date(answer.release_date).getFullYear());
-  const signature         = guess.signature || 'n/a';
-  const answerSignature    = answer.signature;
+  const Signature         = guess.Signature || 'n/a';
+  const answerSignature    = answer.Signature;
 
 
   // Construction de l'embed
-  const embed = new EmbedBuilder()
+const embed = new EmbedBuilder()
     .setTitle(`Loldle — Essai #${game.guesses.length}`)
     .addFields(
-      { name: 'Champion',   value: guessNameDisplay, inline: true },
-      { name: 'Genre',      value: `${COLORS[compareField(guessGender, answerGender)]} ${guessGender}`, inline: true },
-      { name: 'Position',   value: `${COLORS[compareField(guessPos, answerPos)]} ${guessPos}`, inline: true },
-      { name: 'Espèce',     value: `${COLORS[compareField(guessSpecies, answerSpecies)]} ${guess.species.join(', ')}`, inline: true },
-      { name: 'Ressource',  value: `${COLORS[compareField(guessResource, answerResource)]} ${guessResource}`, inline: true },
-      { name: 'Portée',     value: `${COLORS[compareField(guessRange, answerRange)]} ${guess.range_type.join(', ')}`, inline: true },
-      { name: 'Région',     value: `${COLORS[compareField(guessRegions, answerRegions)]} ${guess.regions.join(', ')}`, inline: true },
-      { name: 'Année',      value: `${COLORS[compareField(guessYear, answerYear)]} ${guessYear}`, inline: true },
-      { name: 'Signature',  value: `${COLORS[compareField(signature, answerSignature)]} ${guess.signature}`, inline: true }
+        { name: 'Champion',   value: guessNameDisplay, inline: true },
+        { name: 'Genre',      value: `${COLORS[compareField(guessGender, answerGender)]} ${guessGender}`, inline: true },
+        { name: 'Position',   value: `${COLORS[compareField(guessPos, answerPos)]} ${guessPos}`, inline: true },
+        { name: 'Espèce',     value: `${COLORS[compareField(guessSpecies, answerSpecies)]} ${guess.species.join(', ')}`, inline: true },
+        { name: 'Ressource',  value: `${COLORS[compareField(guessResource, answerResource)]} ${guessResource}`, inline: true },
+        { name: 'Portée',     value: `${COLORS[compareField(guessRange, answerRange)]} ${guess.range_type.join(', ')}`, inline: true },
+        { name: 'Région',     value: `${COLORS[compareField(guessRegions, answerRegions)]} ${guess.regions.join(', ')}`, inline: true },
+        { name: 'Année',      value: `${COLORS[compareField(guessYear, answerYear)]} ${guessYear}`, inline: true },
+        { name: 'Signature',  value: `${COLORS[compareField(Signature, answerSignature)]} ${guess.Signature || 'personne'}`, inline: true }
     )
     .setColor(0x00AE86);
 
