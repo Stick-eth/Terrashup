@@ -13,8 +13,12 @@ async function loadCharacters() {
 }
 
 function compareField(guessVal, answerVal) {
-  // 1) Garde-fou si l’une des valeurs est nulle/indéfinie
-  if (guessVal == null || answerVal == null) return 'red';
+  // 1) Si les valeurs sont strictement égales (===), pas besoin de comparer
+  if (guessVal == answerVal) return 'green';
+
+  // 2) Si l’une des valeurs est vide et l’autre non, pas de correspondance
+  if (!guessVal && answerVal) return 'red';
+  if (guessVal && !answerVal) return 'red';
 
   // 2) Si l’une des valeurs est un array, on transforme en string "a/b/..."
   if (Array.isArray(guessVal))   guessVal   = guessVal.join('/');
@@ -67,6 +71,21 @@ export async function execute(message, args) {
     }
     games.delete(guildId);
     return message.reply('🛑 Partie de loldle terminée pour ce serveur.');
+  }
+
+  // Force win by 'mimou loldle force'
+  if (args[0] === 'force') {
+    if (!games.has(guildId)) {
+      return message.reply('❌ Aucune partie en cours sur ce serveur.');
+    }
+    const game = games.get(guildId);
+    const answer = game.answer;
+    const answerNameDisplay = answer.championName;
+    game.guesses.push(answer);
+    games.delete(guildId);
+    return message.reply(
+      `🎉 Vous avez forcé fin de la partie ! Le champion était **${answerNameDisplay}**.`
+    );
   }
 
   // Info si pas d'argument
@@ -130,7 +149,7 @@ export async function execute(message, args) {
   const answerRegions      = answer.regions.join('/');
   const guessYear          = String(new Date(guess.release_date).getFullYear());
   const answerYear         = String(new Date(answer.release_date).getFullYear());
-  const Signature          = guess.Signature || 'n/a';
+  const Signature          = guess.Signature;
   const guessSignatureDisplay = Array.isArray(guess.Signature)
     ? guess.Signature.join(', ')
     : guess.Signature || 'Personne😿' ;
