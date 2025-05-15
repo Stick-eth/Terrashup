@@ -84,17 +84,19 @@ function _playNext(message) {
   // Flux ffmpeg pour lecture en temps réel
   const ffmpeg   = new prism.FFmpeg({
     args: [
-      '-re',
       '-i', nextTrack,
-      '-analyzeduration', '0',
+      '-analyzeduration', '10',
       '-loglevel', '0',
       '-f', 's16le',
       '-ar', '48000',
-      '-ac', '2'
+      '-ac', '2',
     ]
   });
-  const resource = createAudioResource(ffmpeg, { inputType: StreamType.Raw });
+  const resource = createAudioResource(nextTrack, { inputType: StreamType.Arbitrary });
   queue.player.play(resource);
+
+  ffmpeg.on('error', console.error);
+  queue.player.on('error', console.error);
 
   // Calcul de l'ID et envoi du message
   const filename = path.basename(nextTrack);
